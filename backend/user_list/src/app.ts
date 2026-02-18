@@ -1,22 +1,23 @@
 import express, { type Request, type Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import userRoutes from './routes/userRoutes.js';
+import createUserRoutes from './modules/create-user/createUser.routes.js';
+import usersRoutes from './modules/users/users.routes.js';
 
 const app = express();
 
-// Middleware
+const versionApi = '/v1';
+
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
-app.use('/api/users', userRoutes);
+app.use(versionApi, createUserRoutes);
+app.use(versionApi, usersRoutes);
 
-// Health check route
-app.get('/health', (req: Request, res: Response) => {
-  res.status(200).json({ status: 'OK', message: 'Server is running' });
+app.get('/health', (_req: Request, res: Response) => {
+  res.status(200).json({ status: 'OK' });
 });
 
 export default app;
