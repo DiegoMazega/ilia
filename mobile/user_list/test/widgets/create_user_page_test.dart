@@ -56,10 +56,14 @@ void main() {
     await tester.pumpWidget(createWidgetUnderTest());
 
     when(() => mockCubit.state).thenReturn(
-      CreateUser_CreateUserError([CreateUser_CreateUserErrorType.invalidName]),
+      CreateUser_CreateUserError(const [
+        CreateUser_CreateUserErrorType.invalidName,
+      ]),
     );
     stateController.add(
-      CreateUser_CreateUserError([CreateUser_CreateUserErrorType.invalidName]),
+      CreateUser_CreateUserError(const [
+        CreateUser_CreateUserErrorType.invalidName,
+      ]),
     );
 
     await tester.pump();
@@ -72,10 +76,14 @@ void main() {
     await tester.pumpWidget(createWidgetUnderTest());
 
     when(() => mockCubit.state).thenReturn(
-      CreateUser_CreateUserError([CreateUser_CreateUserErrorType.invalidEmail]),
+      CreateUser_CreateUserError(const [
+        CreateUser_CreateUserErrorType.invalidEmail,
+      ]),
     );
     stateController.add(
-      CreateUser_CreateUserError([CreateUser_CreateUserErrorType.invalidEmail]),
+      CreateUser_CreateUserError(const [
+        CreateUser_CreateUserErrorType.invalidEmail,
+      ]),
     );
 
     await tester.pump();

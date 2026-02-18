@@ -45,7 +45,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loading => 'Loading...';
 
   @override
-  String get error => 'An error occurred';
+  String get error =>
+      'An error occurred, check your internet connection or try again later';
 
   @override
   String get homeTitle => 'Home Screen';
@@ -55,4 +56,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tryAgain => 'Try again';
+
+  @override
+  String get errorEmailAlreadyExists => 'This email is already in use.';
+
+  @override
+  String get errorInvalidNameFormat => 'Invalid name format.';
+
+  @override
+  String get errorInvalidEmailFormat => 'Invalid email format.';
+
+  @override
+  String get errorInvalidPayload => 'Invalid data sent.';
+
+  @override
+  String get errorFetchUsers => 'Error fetching users.';
+
+  @override
+  String get errorInternalServer => 'Internal server error.';
+
+  @override
+  String get errorRateLimit => 'Too many requests. Please try again later.';
+
+  @override
+  String get createAnotherUser => 'Create another user';
+
+  @override
+  String get viewRegisteredUsers => 'View registered users';
 }

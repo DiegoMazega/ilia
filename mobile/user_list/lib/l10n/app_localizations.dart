@@ -173,7 +173,7 @@ abstract class AppLocalizations {
   /// No description provided for @error.
   ///
   /// In en, this message translates to:
-  /// **'An error occurred'**
+  /// **'An error occurred, check your internet connection or try again later'**
   String get error;
 
   /// No description provided for @homeTitle.
@@ -193,6 +193,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Try again'**
   String get tryAgain;
+
+  /// No description provided for @errorEmailAlreadyExists.
+  ///
+  /// In en, this message translates to:
+  /// **'This email is already in use.'**
+  String get errorEmailAlreadyExists;
+
+  /// No description provided for @errorInvalidNameFormat.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid name format.'**
+  String get errorInvalidNameFormat;
+
+  /// No description provided for @errorInvalidEmailFormat.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email format.'**
+  String get errorInvalidEmailFormat;
+
+  /// No description provided for @errorInvalidPayload.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid data sent.'**
+  String get errorInvalidPayload;
+
+  /// No description provided for @errorFetchUsers.
+  ///
+  /// In en, this message translates to:
+  /// **'Error fetching users.'**
+  String get errorFetchUsers;
+
+  /// No description provided for @errorInternalServer.
+  ///
+  /// In en, this message translates to:
+  /// **'Internal server error.'**
+  String get errorInternalServer;
+
+  /// No description provided for @errorRateLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many requests. Please try again later.'**
+  String get errorRateLimit;
+
+  /// No description provided for @createAnotherUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Create another user'**
+  String get createAnotherUser;
+
+  /// No description provided for @viewRegisteredUsers.
+  ///
+  /// In en, this message translates to:
+  /// **'View registered users'**
+  String get viewRegisteredUsers;
 }
 
 class _AppLocalizationsDelegate

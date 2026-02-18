@@ -38,6 +38,24 @@ class CreateUser_CreateUserController {
     if (errors.contains(CreateUser_CreateUserErrorType.invalidEmail)) {
       emailError.value = translate.invalidEmail;
     }
+    if (errors.contains(CreateUser_CreateUserErrorType.emailAlreadyExists)) {
+      emailError.value = translate.errorEmailAlreadyExists;
+    }
+    if (errors.contains(CreateUser_CreateUserErrorType.invalidNameFormat)) {
+      nameError.value = translate.errorInvalidNameFormat;
+    }
+    if (errors.contains(CreateUser_CreateUserErrorType.invalidEmailFormat)) {
+      emailError.value = translate.errorInvalidEmailFormat;
+    }
+    if (errors.contains(CreateUser_CreateUserErrorType.invalidPayload)) {
+      generalError.value = translate.errorInvalidPayload;
+    }
+    if (errors.contains(CreateUser_CreateUserErrorType.rateLimit)) {
+      generalError.value = translate.errorRateLimit;
+    }
+    if (errors.contains(CreateUser_CreateUserErrorType.serverError)) {
+      generalError.value = translate.errorInternalServer;
+    }
     if (errors.contains(CreateUser_CreateUserErrorType.unknown)) {
       generalError.value = translate.error;
     }
@@ -54,30 +72,30 @@ CreateUser_CreateUserController useCreateUserController(BuildContext context) {
   final generalError = useState<String?>(null);
 
   useEffect(() {
-    void listener() {
-      if (nameError.value != null || generalError.value != null) {
-        nameError.value = null;
-        generalError.value = null;
-      }
+    void nameListener() {
+      if (nameError.value != null) nameError.value = null;
+      if (generalError.value != null) generalError.value = null;
     }
 
-    nameController.addListener(listener);
-    return () => nameController.removeListener(listener);
-  }, [nameController]);
-
-  useEffect(() {
-    void listener() {
-      if (emailError.value != null || generalError.value != null) {
-        emailError.value = null;
-        generalError.value = null;
-      }
+    void emailListener() {
+      if (emailError.value != null) emailError.value = null;
+      if (generalError.value != null) generalError.value = null;
     }
 
-    emailController.addListener(listener);
-    return () => emailController.removeListener(listener);
-  }, [emailController]);
+    nameController.addListener(nameListener);
+    emailController.addListener(emailListener);
+
+    return () {
+      nameController.removeListener(nameListener);
+      emailController.removeListener(emailListener);
+    };
+  }, [nameController, emailController]);
 
   void createUser() {
+    nameError.value = null;
+    emailError.value = null;
+    generalError.value = null;
+
     final cubit = context.read<CreateUser_CreateUserCubit>();
     final isValid = cubit.validateUser(
       nameController.text,

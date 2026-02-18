@@ -12,8 +12,17 @@
   "invalidName": "Por favor, insira pelo menos nome e sobrenome",
   "userCreatedSuccess": "Usuário criado com sucesso!",
   "loading": "Carregando...",
-  "error": "Ocorreu um erro",
+  "error": "Um erro aconteceu, verifique sua internet ou tente novamente mais tarde",
   "homeTitle": "Tela Inicial",
   "emptyListMessage": "Não há dados a serem mostrados. Puxe para baixo para recarregar a página.",
-  "tryAgain": "Tentar novamente"
+  "tryAgain": "Tentar novamente",
+  "errorEmailAlreadyExists": "Este e-mail já está em uso.",
+  "errorInvalidNameFormat": "Formato de nome inválido.",
+  "errorInvalidEmailFormat": "Formato de e-mail inválido.",
+  "errorInvalidPayload": "Dados inválidos enviados.",
+  "errorFetchUsers": "Erro ao buscar usuários.",
+  "errorInternalServer": "Erro interno do servidor.",
+  "errorRateLimit": "Muitas requisições. Tente novamente mais tarde.",
+  "createAnotherUser": "Cadastrar outro usuário",
+  "viewRegisteredUsers": "Ver usuários cadastrados"
 }

@@ -41,7 +41,7 @@ class CreateUser_CreateUserSuccessPage extends StatelessWidget {
                     CreateUser_CreateUserPage.routeName,
                   ),
                   icon: const Icon(Icons.person_add),
-                  label: Text(translate.createUserTitle),
+                  label: Text(translate.createAnotherUser),
                 ),
               ),
               const SizedBox(height: 16),
@@ -52,7 +52,7 @@ class CreateUser_CreateUserSuccessPage extends StatelessWidget {
                   onPressed: () =>
                       context.pushReplacement(ListUser_ListUserPage.routeName),
                   icon: const Icon(Icons.list),
-                  label: Text(translate.listUserTitle),
+                  label: Text(translate.viewRegisteredUsers),
                 ),
               ),
               const SizedBox(height: 16),

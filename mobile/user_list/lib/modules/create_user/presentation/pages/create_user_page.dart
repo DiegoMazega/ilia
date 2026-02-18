@@ -60,8 +60,8 @@ class CreateUser_CreateUserPage extends HookWidget {
               return Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
+                  spacing: 24,
                   children: [
-                    ?_buildErrorBanner(controller),
                     TextField(
                       controller: controller.nameController,
                       focusNode: controller.nameFocusNode,
@@ -74,7 +74,6 @@ class CreateUser_CreateUserPage extends HookWidget {
                           controller.emailFocusNode.requestFocus(),
                       textInputAction: TextInputAction.next,
                     ),
-                    const SizedBox(height: 16),
                     TextField(
                       controller: controller.emailController,
                       focusNode: controller.emailFocusNode,
@@ -87,7 +86,8 @@ class CreateUser_CreateUserPage extends HookWidget {
                       onSubmitted: (_) => controller.createUser(),
                       textInputAction: TextInputAction.done,
                     ),
-                    const SizedBox(height: 24),
+
+                    ?_buildErrorBanner(controller),
                     if (state is CreateUser_CreateUserLoading)
                       const CircularProgressIndicator()
                     else

@@ -45,7 +45,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get loading => 'Carregando...';
 
   @override
-  String get error => 'Ocorreu um erro';
+  String get error =>
+      'Um erro aconteceu, verifique sua internet ou tente novamente mais tarde';
 
   @override
   String get homeTitle => 'Tela Inicial';
@@ -56,4 +57,32 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get tryAgain => 'Tentar novamente';
+
+  @override
+  String get errorEmailAlreadyExists => 'Este e-mail já está em uso.';
+
+  @override
+  String get errorInvalidNameFormat => 'Formato de nome inválido.';
+
+  @override
+  String get errorInvalidEmailFormat => 'Formato de e-mail inválido.';
+
+  @override
+  String get errorInvalidPayload => 'Dados inválidos enviados.';
+
+  @override
+  String get errorFetchUsers => 'Erro ao buscar usuários.';
+
+  @override
+  String get errorInternalServer => 'Erro interno do servidor.';
+
+  @override
+  String get errorRateLimit =>
+      'Muitas requisições. Tente novamente mais tarde.';
+
+  @override
+  String get createAnotherUser => 'Cadastrar outro usuário';
+
+  @override
+  String get viewRegisteredUsers => 'Ver usuários cadastrados';
 }

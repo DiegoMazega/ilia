@@ -18,8 +18,17 @@
   "invalidName": "Please enter at least a first and last name",
   "userCreatedSuccess": "User created successfully!",
   "loading": "Loading...",
-  "error": "An error occurred",
+  "error": "An error occurred, check your internet connection or try again later",
   "homeTitle": "Home Screen",
   "emptyListMessage": "No data to be shown. Pull down to refresh.",
-  "tryAgain": "Try again"
+  "tryAgain": "Try again",
+  "errorEmailAlreadyExists": "This email is already in use.",
+  "errorInvalidNameFormat": "Invalid name format.",
+  "errorInvalidEmailFormat": "Invalid email format.",
+  "errorInvalidPayload": "Invalid data sent.",
+  "errorFetchUsers": "Error fetching users.",
+  "errorInternalServer": "Internal server error.",
+  "errorRateLimit": "Too many requests. Please try again later.",
+  "createAnotherUser": "Create another user",
+  "viewRegisteredUsers": "View registered users"
 }
