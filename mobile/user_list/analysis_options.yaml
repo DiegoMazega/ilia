@@ -5,6 +5,8 @@ linter:
     prefer_const_constructors: true
     prefer_const_constructors_in_immutables: true
     prefer_const_literals_to_create_immutables: true
+    camel_case_types: false
+    non_constant_identifier_names: false
 
     avoid_unnecessary_containers: true
     sized_box_for_whitespace: true

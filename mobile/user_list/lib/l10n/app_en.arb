@@ -1,0 +1,25 @@
+{
+  "@@locale": "en",
+  "appTitle": "User List",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "counterMsg": "You have pushed the button this many times:",
+  "@counterMsg": {
+    "description": "Message shown above the counter"
+  },
+  "incrementTooltip": "Increment",
+  "name": "Name",
+  "email": "Email",
+  "save": "Save",
+  "createUserTitle": "Create User",
+  "listUserTitle": "User List",
+  "invalidEmail": "Please enter a valid email",
+  "invalidName": "Please enter at least a first and last name",
+  "userCreatedSuccess": "User created successfully!",
+  "loading": "Loading...",
+  "error": "An error occurred",
+  "homeTitle": "Home Screen",
+  "emptyListMessage": "No data to be shown. Pull down to refresh.",
+  "tryAgain": "Try again"
+}

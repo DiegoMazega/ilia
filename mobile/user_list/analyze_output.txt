@@ -1,0 +1,6 @@
+Analyzing user_list...                                          
+
+  error - Missing concrete implementations of 'getter mixin _$CreateUser_CreateUserModel on Object.email', 'getter mixin _$CreateUser_CreateUserModel on Object.name', and 'mixin _$CreateUser_CreateUserModel on Object.toJson' - lib\modules\create_user\data\models\create_user_model.dart:7:7 - non_abstract_class_inherits_abstract_member
+  error - Missing concrete implementations of 'getter mixin _$ListUser_ListUserModel on Object.email', 'getter mixin _$ListUser_ListUserModel on Object.id', 'getter mixin _$ListUser_ListUserModel on Object.name', and 'mixin _$ListUser_ListUserModel on Object.toJson' - lib\modules\list_user\data\models\list_user_model.dart:7:7 - non_abstract_class_inherits_abstract_member
+
+2 issues found. (ran in 1.7s)

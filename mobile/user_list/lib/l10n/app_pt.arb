@@ -1,0 +1,19 @@
+{
+  "@@locale": "pt",
+  "appTitle": "Lista de Usuários",
+  "counterMsg": "Você pressionou o botão este número de vezes:",
+  "incrementTooltip": "Incrementar",
+  "name": "Nome",
+  "email": "E-mail",
+  "save": "Salvar",
+  "createUserTitle": "Criar Usuário",
+  "listUserTitle": "Lista de Usuários",
+  "invalidEmail": "Por favor, insira um e-mail válido",
+  "invalidName": "Por favor, insira pelo menos nome e sobrenome",
+  "userCreatedSuccess": "Usuário criado com sucesso!",
+  "loading": "Carregando...",
+  "error": "Ocorreu um erro",
+  "homeTitle": "Tela Inicial",
+  "emptyListMessage": "Não há dados a serem mostrados. Puxe para baixo para recarregar a página.",
+  "tryAgain": "Tentar novamente"
+}
