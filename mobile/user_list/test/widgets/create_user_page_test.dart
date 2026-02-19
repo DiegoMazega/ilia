@@ -9,6 +9,7 @@ import 'package:user_list/modules/create_user/presentation/cubit/create_user_cub
 import 'package:user_list/modules/create_user/presentation/cubit/create_user_error_type.dart';
 import 'package:user_list/modules/create_user/presentation/cubit/create_user_state.dart';
 import 'package:user_list/modules/create_user/presentation/pages/create_user_page.dart';
+import 'package:user_list/modules/shared/keys/create_user_keys.dart';
 import 'mocks/create_user_cubit_mock.dart';
 
 void main() {
@@ -46,8 +47,9 @@ void main() {
 
     await tester.pumpWidget(createWidgetUnderTest());
 
-    expect(find.byType(TextField), findsNWidgets(2));
-    expect(find.byType(ElevatedButton), findsOneWidget);
+    expect(find.byKey(CreateUserKeys.nameInput), findsOneWidget);
+    expect(find.byKey(CreateUserKeys.emailInput), findsOneWidget);
+    expect(find.byKey(CreateUserKeys.saveButton), findsOneWidget);
   });
 
   testWidgets('shows name error when name validator fails', (tester) async {
@@ -96,7 +98,7 @@ void main() {
 
     await tester.pumpWidget(createWidgetUnderTest());
 
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.byKey(CreateUserKeys.loading), findsOneWidget);
   });
 
   testWidgets('calls createUser when button is pressed', (tester) async {
@@ -106,9 +108,15 @@ void main() {
 
     await tester.pumpWidget(createWidgetUnderTest());
 
-    await tester.enterText(find.byType(TextField).first, 'Diego Antunes');
-    await tester.enterText(find.byType(TextField).last, 'diego@test.com');
-    await tester.tap(find.byType(ElevatedButton));
+    await tester.enterText(
+      find.byKey(CreateUserKeys.nameInput),
+      'Diego Antunes',
+    );
+    await tester.enterText(
+      find.byKey(CreateUserKeys.emailInput),
+      'diego@test.com',
+    );
+    await tester.tap(find.byKey(CreateUserKeys.saveButton));
 
     verify(
       () => mockCubit.validateUser('Diego Antunes', 'diego@test.com'),

@@ -138,6 +138,50 @@ Verifica se a API está online.
     { "status": "OK" }
     ```
 
+### Exemplos de Requisições (cURL)
+
+Abaixo estão exemplos de requisições que podem ser importadas no Postman, basta copiar e colar no campo da URl.
+
+#### 1. Listar Usuários
+
+```bash
+curl --location 'http://localhost:3000/v1/users' \
+--header 'Content-Type: application/json'
+```
+
+#### 2. Criar Usuário (Teste Com dados inválidos)
+
+```bash
+curl --location --request POST 'http://localhost:3000/v1/create-user' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "test",
+    "email": "email"
+}'
+```
+
+#### 3. Criar Usuário (Dados Válidos)
+
+```bash
+curl --location --request POST 'http://localhost:3000/v1/create-user' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "test test",
+    "email": "email@test.com"
+}'
+```
+
+#### 4. Teste de Segurança (Teste de Prevenção de SQL Injection)
+
+```bash
+curl --location --request POST 'http://localhost:3000/v1/create-user' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Hacker'\''''); DROP TABLE users; -- Smith",
+    "email": "hacker@test.com"
+}'
+```
+
 ---
 
 ## Mobile

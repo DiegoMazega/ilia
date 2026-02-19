@@ -7,6 +7,7 @@ import 'package:user_list/modules/create_user/presentation/cubit/create_user_cub
 import 'package:user_list/modules/create_user/presentation/cubit/create_user_state.dart';
 import 'package:user_list/modules/create_user/presentation/pages/create_user_success_page.dart';
 import 'package:user_list/modules/shared/extensions/translate_extension.dart';
+import 'package:user_list/modules/shared/keys/create_user_keys.dart';
 
 class CreateUser_CreateUserPage extends HookWidget {
   const CreateUser_CreateUserPage({super.key});
@@ -63,6 +64,7 @@ class CreateUser_CreateUserPage extends HookWidget {
                   spacing: 24,
                   children: [
                     TextField(
+                      key: CreateUserKeys.nameInput,
                       controller: controller.nameController,
                       focusNode: controller.nameFocusNode,
                       decoration: InputDecoration(
@@ -75,6 +77,7 @@ class CreateUser_CreateUserPage extends HookWidget {
                       textInputAction: TextInputAction.next,
                     ),
                     TextField(
+                      key: CreateUserKeys.emailInput,
                       controller: controller.emailController,
                       focusNode: controller.emailFocusNode,
                       decoration: InputDecoration(
@@ -89,11 +92,14 @@ class CreateUser_CreateUserPage extends HookWidget {
 
                     ?_buildErrorBanner(controller),
                     if (state is CreateUser_CreateUserLoading)
-                      const CircularProgressIndicator()
+                      const CircularProgressIndicator(
+                        key: CreateUserKeys.loading,
+                      )
                     else
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
+                          key: CreateUserKeys.saveButton,
                           onPressed: controller.createUser,
                           child: Text(translate.save),
                         ),

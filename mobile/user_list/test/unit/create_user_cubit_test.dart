@@ -35,7 +35,7 @@ void main() {
         when(() => mockRepository.createUser(any())).thenAnswer((_) async {});
         return cubit;
       },
-      act: (cubit) => cubit.createUser('Diego Antunes', 'diego@example.com'),
+      act: (cubit) => cubit.createUser('Diego Duarte', 'diego@example.com'),
       expect: () => [
         isA<CreateUser_CreateUserLoading>(),
         isA<CreateUser_CreateUserSuccess>(),
@@ -53,7 +53,7 @@ void main() {
         );
         return cubit;
       },
-      act: (cubit) => cubit.createUser('Diego Antunes', 'diego@example.com'),
+      act: (cubit) => cubit.createUser('Diego Duarte', 'diego@example.com'),
       expect: () => [
         isA<CreateUser_CreateUserLoading>(),
         isA<CreateUser_CreateUserError>().having((e) => e.errors, 'errors', [
@@ -77,7 +77,7 @@ void main() {
     blocTest<CreateUser_CreateUserCubit, CreateUser_CreateUserState>(
       'emits [Error([invalidEmail])] when email is invalid',
       build: () => cubit,
-      act: (cubit) => cubit.validateUser('Diego Antunes', 'invalid-email'),
+      act: (cubit) => cubit.validateUser('Diego Duarte', 'invalid-email'),
       expect: () => [
         isA<CreateUser_CreateUserInitial>(),
         isA<CreateUser_CreateUserError>().having((e) => e.errors, 'errors', [
@@ -111,7 +111,7 @@ void main() {
         ).thenThrow(Exception('Failed to create user'));
         return cubit;
       },
-      act: (cubit) => cubit.createUser('Diego Antunes', 'diego@example.com'),
+      act: (cubit) => cubit.createUser('Diego Duarte', 'diego@example.com'),
       expect: () => [
         isA<CreateUser_CreateUserLoading>(),
         isA<CreateUser_CreateUserError>().having((e) => e.errors, 'errors', [
